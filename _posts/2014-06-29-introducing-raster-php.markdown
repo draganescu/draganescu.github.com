@@ -8,6 +8,8 @@ excerpt: RasterPHP brief introduction.
 
 ###a framework even designers can understand ^-^
 
+Technical g[uy|irl]? here is the [annotated source code](http://raster-docs.herokuapp.com/sm/)
+
 Ok, this has to be appreciated at least for the nerve — making a PHP framework in 2014, the year of the node, is both uncool and hard to promote. But you’re here, and so please carry on, you might be impressed.
 
 Raster PHP is a super small footprint collection of ideas — that are weaved up together in a cloth of magic coding happiness.
