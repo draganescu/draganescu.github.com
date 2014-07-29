@@ -1,0 +1,25 @@
+---
+layout: post
+title:  "The RTO design pattern"
+date:   2014-06-29 10:18:00
+categories: RTO specs
+excerpt: A user requests an URI. That uri is mapped to a template. The template is mapped to objects.
+---
+
+###A design pattern for websites
+
+A user requests an URI.
+That uri is mapped to a template.
+The template is mapped to objects.
+
+The Request, Template, Object design pattern is grown out of MVC but adapted to the process of building a website as opposed to building an webapp.
+
+The reasons to think of a different pattern for this usecase could be any of the following:
+
+- for websites the complexity is so much lower than for webapps
+- a webapp does not have a sitemap
+- a webapp is a tool doing something (hopefully well) while a website is a collection of information presented in various ways.
+
+The design pattern considers a request to be the old style URI pointing to a resource. That resource is in general some data the user expects, but since we're human we cannot deal well with raw information so we require formatting. Before it is presented the data is formatted using a template associated with the specific URI. The template contains simple tags that point to what objects and which methods hold the data.
+
+Inheritic from MVC this design patern (RTO) is enveloped in a handler (like one single front controller) that handles the mapping of requests to templates and of templates to objects. The controller then instanced the objects and executes the methods that the template needs to get filled with data. It then sends back the response.

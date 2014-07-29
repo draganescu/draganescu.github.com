@@ -1,0 +1,11 @@
+---
+layout: post
+title:  "The Raster framework"
+date:   2014-06-29 10:18:00
+categories: Raster specs
+excerpt: Raster is a framework specification implementing the RTO design pattern.
+---
+
+###A framework for websites
+
+Raster is a framework specification implementing the RTO design pattern. The architecture of the framework is based on a fixed set of principles and tries to make an easier entry into the UX-IA-PM web development methodology.
