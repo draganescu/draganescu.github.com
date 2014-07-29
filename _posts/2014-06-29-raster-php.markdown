@@ -2,7 +2,7 @@
 layout: post
 title:  "The RasterPHP implementation"
 date:   2014-06-29 10:18:00
-categories: Raster specs PHP
+categories: raster specs php
 excerpt: RasterPHP is the Raster framework written in PHP.
 ---
 

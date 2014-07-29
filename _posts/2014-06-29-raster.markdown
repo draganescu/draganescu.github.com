@@ -2,7 +2,7 @@
 layout: post
 title:  "The Raster framework"
 date:   2014-06-29 10:18:00
-categories: Raster specs
+categories: raster specs
 excerpt: Raster is a framework specification implementing the RTO design pattern.
 ---
 

@@ -2,7 +2,7 @@
 layout: post
 title:  "The RTO design pattern"
 date:   2014-06-29 10:18:00
-categories: RTO specs
+categories: rto specs
 excerpt: A user requests an URI. That uri is mapped to a template. The template is mapped to objects.
 ---
 

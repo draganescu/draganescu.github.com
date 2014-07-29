@@ -2,7 +2,7 @@
 layout: post
 title:  "Introducing RasterPHP"
 date:   2014-06-29 10:18:00
-categories: Raster specs PHP
+categories: raster specs php
 excerpt: RasterPHP brief introduction.
 ---
 
