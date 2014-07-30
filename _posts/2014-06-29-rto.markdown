@@ -27,6 +27,7 @@ Inheritic from MVC this design patern (RTO) is enveloped in a handler (like one 
 ### RTO explained
 
 Users request data. The request contains:
+
 - meta information about the user
 - the specific data requested
 - the expected format
