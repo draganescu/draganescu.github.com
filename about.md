@@ -3,9 +3,9 @@ layout: page
 title: About RTO and Raster
 ---
 
-RTO is a design pattern aiming to ease website development. Raster is a specification on how to implement the design pattern in a web framework.
+RTO is a design pattern aiming to ease website development. Raster is a specification on how to implement the RTO design pattern in a web framework.
 
-The first framework implemented on Raster's RTO is RasterPHP.
+The first framework implemented on the Raster specification is RasterPHP.
 Because RTO is a pattern aiming to help all website developers RasterPHP is available also as a Wordpress plugin and as a Code Igniter library.
 
 The next implementation of Raster is RasterJS using nodeJS as the server.

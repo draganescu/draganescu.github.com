@@ -23,3 +23,28 @@ The reasons to think of a different pattern for this usecase could be any of the
 The design pattern considers a request to be the old style URI pointing to a resource. That resource is in general some data the user expects, but since we're human we cannot deal well with raw information so we require formatting. Before it is presented the data is formatted using a template associated with the specific URI. The template contains simple tags that point to what objects and which methods hold the data.
 
 Inheritic from MVC this design patern (RTO) is enveloped in a handler (like one single front controller) that handles the mapping of requests to templates and of templates to objects. The controller then instanced the objects and executes the methods that the template needs to get filled with data. It then sends back the response.
+
+### RTO explained
+
+Users request data. The request contains:
+- meta information about the user
+- the specific data requested
+- the expected format
+
+A web request is by default a key value pair between a data descriptor which is the URL and the format which by default is an html page. Therefore it is only logical to use this as the first step in our pattern.
+
+So, because the request does not contain any information about where the data is, but it does a descriptor and expects a format, a request is always mapped to a template. A template is the format: an UI, a feed, machine encoded data or an encrypted message and many other formats.
+
+The data is stored in databases, in files, in config lists, in memory or session. To get the data out of these places we need logic. All this logic is wrapped into objects. But a request being mapped to a template directly has no idea what objects can pull the data out of the stores.
+
+Therefore we map the template with the object or objects needed to retrieve the requested data. The template consists of a format and a series of pointers to objects. The format and the pointers are described by a templating language. Because there is no logic in a template the templating language should be just a way to point to objects and be replaceable by the data returned by the objects.
+
+### Information flow
+
+Mapping a request to a template and a template to objects that retrieve data requires an envelope system that solves the mapping and responds to the request. There would be an option of smart templates that respond themselves, but in this case the main premise of no logic in the template is broken. Therefore RTO requires a mapper to handle the information flow.
+
+
+
+
+
+
