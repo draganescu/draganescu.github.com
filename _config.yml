@@ -1,12 +1,17 @@
 name: RTO and Raster
-description: The design pattern and framework for websites
-meta_description: "The base resource about RTO and Raster"
+description: A design pattern and a PHP framework for websites made by people and agents
+meta_description: "RTO (Request, Template, Object) is a design pattern for websites. Raster is its PHP framework: HTML templates, a CMS that comes from the markup, and tools for agents."
 
-markdown: redcarpet
-pygments: true
-logo: false
+markdown: kramdown
+kramdown:
+  input: GFM
+highlighter: rouge
 paginate: 15
+plugins:
+  - jekyll-paginate
+  - jekyll-feed
 
-# Details for the RSS feed generator
-url:            'http://draganescu.github.io/'
-author:         'Andrei Draganescu'
+# Used by the feed and the share links
+url: 'https://draganescu.github.io'
+author: 'Andrei Draganescu'
+logo: false

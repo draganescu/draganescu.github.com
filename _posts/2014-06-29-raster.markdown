@@ -1,11 +1,81 @@
 ---
 layout: post
 title:  "The Raster framework"
-date:   2014-06-29 10:18:00
+date:   2026-09-26 11:00:00
 categories: raster specs
-excerpt: Raster is a framework specification implementing the RTO design pattern.
+permalink: /raster/specs/2014/06/29/raster.html
+excerpt: Raster is the PHP framework for RTO. You write HTML, mark the parts that change with comments, and the content model, the CMS and the editing tools follow from the markup.
 ---
 
-###A framework for websites
+Raster is the framework that implements the [RTO design pattern](/rto/specs/2014/06/29/rto.html).
+It is written in PHP and lives at [github.com/draganescu/rasterPHP](https://github.com/draganescu/rasterPHP).
+It is made for web artefacts: sites, landing pages, blogs, newsletters and
+small apps, made by people or by agents.
 
-Raster is a framework specification implementing the RTO design pattern. The architecture of the framework is based on a fixed set of principles and tries to make an easier entry into the UX-IA-PM web development methodology.
+## How it works
+
+A request picks a view, which is a plain HTML file. The parts of the page that
+change are HTML comments that name a model and a method:
+
+```html
+<h1><!-- print.cms.headline -->Good coffee, slow mornings.<!-- /print.cms.headline --></h1>
+
+<!-- render.cms.menu('order=name') -->
+<article>
+  <h2><!-- print.name -->Flat white<!-- /print.name --></h2>
+  <p><!-- print.price -->14<!-- /print.price --> lei</p>
+</article>
+<!-- /render.cms.menu('order=name') -->
+```
+
+The view still opens in a browser as a mock-up. When Raster serves it, each
+annotation pulls its data from the model it names. The template owns all the
+text on the page, including error messages and emails; models only decide what
+shows.
+
+## What the markup gives you
+
+- **A CMS with no schema files.** `print.cms.headline` declares an editable
+  field on that page, and `render.cms.menu` declares a collection whose fields
+  are the keys inside it. Items get slugs, drafts, scheduled publishing,
+  ordering, filters, pagination and their own URLs. Editors change content in
+  the page, and every save is a new revision.
+- **Forms with their rules in the HTML.** `required`, `type`, `minlength`,
+  `pattern` and the rest are enforced on the server too, and every message is
+  written in the template. Posts from other sites and bots are refused.
+- **Accounts and a newsletter**, with every screen written in your templates:
+  sign-up, login, password reset, roles, protected pages, double opt-in and
+  sending any page as an issue.
+- **Feeds and data views.** `news.rss`, `sitemap.xml` or `feed.json` are views
+  too, escaped for their format.
+- **Events between models.** When a booking should subscribe the guest to the
+  newsletter, one model sends an event and the other listens. The template
+  never has to know.
+- **A page cache**, translations, mail over SMTP, and a JSON API for every
+  model.
+
+## Made for agents too
+
+Raster is built so an AI agent can make and run a site as easily as a person:
+
+- [AGENTS.md](https://github.com/draganescu/rasterPHP/blob/master/AGENTS.md) is
+  the complete specification, in one file.
+- `raster lint` checks every view, form, alert, event binding and query, and
+  a broken template in development shows a list of what is wrong instead of
+  half a page.
+- `raster schema` shows the content model the templates define, compared with
+  the database.
+- An MCP server lets an agent read and edit the content, limited to the fields
+  the templates declare.
+- `raster doctor` says whether a site is healthy, up to date and ready for
+  production.
+
+## Compared with the big frameworks
+
+Raster is small: one controller, one view file per URL, no build step and
+SQLite by default. It does less than Laravel or Symfony on purpose. What it
+generates is easy to follow, pages are fast and cached for visitors, and every
+page is editable as soon as it exists.
+
+[Getting started](/raster/specs/php/2014/06/29/raster-php.html) shows how to
+make a site with it.

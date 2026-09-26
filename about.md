@@ -3,23 +3,32 @@ layout: page
 title: About RTO and Raster
 ---
 
-RTO is a design pattern aiming to ease website development. Raster is a specification on how to implement the RTO design pattern in a web framework.
+**RTO** (Request, Template, Object) is a design pattern for websites. A
+request picks a template, and the template pulls its data from objects. The
+template owns every word on the page; objects only decide what shows.
+[Read the specification](/rto/specs/2014/06/29/rto.html).
 
-The first framework implemented on the Raster specification is RasterPHP.
-Because RTO is a pattern aiming to help all website developers RasterPHP is available also as a Wordpress plugin and as a Code Igniter library.
+**Raster** is the framework that implements RTO, written in PHP. You write
+plain HTML and mark the parts that change with HTML comments. The CMS, the
+forms, accounts, the newsletter and the feeds all follow from that markup, and
+the same tools work for people and for AI agents.
+[Read about the framework](/raster/specs/2014/06/29/raster.html), or
+[get started](/raster/specs/php/2014/06/29/raster-php.html).
 
-The next implementation of Raster is RasterJS using nodeJS as the server.
+## Where things are
 
-The aim is to implement Raster in all major web scripting languages: PHP, JS, Ruby and Python.
+- The code, the demo café and the issue tracker:
+  [github.com/draganescu/rasterPHP](https://github.com/draganescu/rasterPHP)
+- The complete specification of the framework, written for agents and people:
+  [AGENTS.md](https://github.com/draganescu/rasterPHP/blob/master/AGENTS.md)
+- What changed in each release:
+  [CHANGELOG.md](https://github.com/draganescu/rasterPHP/blob/master/CHANGELOG.md)
 
-## What is RTO
-The Request, Template, Object design pattern is grown out of MVC but adapted to the process of building a website as opposed to building an webapp.
+## History
 
-## What is Raster
-Raster is a framework implementing the RTO design pattern. The architecture of the framework is based on a fixed set of principles and tries to make an easier entry into the UX-IA-PM web development methodology.
+RTO and Raster were first described in 2014, when Raster also had ports to
+CodeIgniter and WordPress and a Node.js version was planned. In 2026 the
+pattern got its second version and the PHP framework was rebuilt around it;
+the other implementations are no longer maintained.
 
-## What is UX/IA/PM
-UX/IA/PM is a global acrynom for a web development methodology that elegantly solves the merger between designing interaction, building the software for it and delivering working products on time.
-
-
-
+RTO and Raster are made by Andrei Draganescu.
